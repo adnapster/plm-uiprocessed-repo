@@ -9,6 +9,17 @@ spring:
   profiles: docker-development-cloud
   application:
     name: plm-uiprocesser-service
+eureka:
+  client:
+    register-with-eureka: true
+    eureka-service-url-poll-interval-seconds: 5000
+    enabled: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+  instance:
+    prefer-ip-address: false
+    hostname: plm-uiprocesser-service    
 
 logging:
   level:
