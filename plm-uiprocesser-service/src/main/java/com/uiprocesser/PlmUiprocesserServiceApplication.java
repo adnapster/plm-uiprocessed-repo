@@ -102,7 +102,7 @@ public class PlmUiprocesserServiceApplication {
 			LOG.info("###### Starting PlmUiprocesserServiceApplication.reprocessWebportalXML() #######");
 		}
 		
-		System.out.println("################ I am Called###################")
+		System.out.println("################ I am Called###################");
 		List<ServiceInstance> apigatewaymsInstanceList = discoveryClient.getInstances(apigatewaymsName);
 		ServiceInstance apigatewaymsInstance = apigatewaymsInstanceList.get(0);
 		boolean isXMLReprocessed = false;
