@@ -1,0 +1,91 @@
+server:
+ port: 8505
+  
+spring:
+  profiles:
+    active: azure-development-cloud
+---
+spring:
+  profiles: docker-development-cloud
+  application:
+    name: plm-uiprocesser-service
+
+logging:
+  level:
+    org.springframework.security: INFO
+    org.springframework.web: INFO
+    com.jci.partbom: DEBUG
+  
+azure:
+    storage:
+      connectionstring: DefaultEndpointsProtocol=https;AccountName=stjcibemicroservicedev;AccountKey=f1aaZK0ecnptn302H6JqEAjKx/gRgHP8kO9JkWGaGRMitvKR8V+qm438FDhVDkg3m00Okb3pvVYpOfvdXkgoIQ==;
+      blob:
+       download:
+         baseurl: https://storagemicroservicedev.blob.core.windows.net/controlsplmblob/
+---
+spring:
+  profiles: docker-production-cloud
+  application:
+    name: plm-uiprocesser-service
+
+logging:
+  level:
+    org.springframework.security: INFO
+    org.springframework.web: INFO
+    com.jci.partbom: INFO
+
+azure:
+    storage:
+      connectionstring: DefaultEndpointsProtocol=https;AccountName=stjcibemicroserviceprod;AccountKey=fMrqLK4+O3Z+GBSKNQJ3kgwdrBN70GsXYtW07GGey0qwNf+oplGrylHH4qAEJ2acGViOTzdQCduCRO401jSjdQ==;
+      blob:
+       download:
+         baseurl: https://stjcibemicroserviceprod.blob.core.windows.net/controlsplmblob/
+---
+spring:
+  profiles: docker-qa-cloud
+  application:
+    name: plm-uiprocesser-service
+
+logging:
+  level:
+    org.springframework.security: INFO
+    org.springframework.web: INFO
+    com.jci.partbom: DEBUG
+
+azure:
+    storage:
+      connectionstring: DefaultEndpointsProtocol=https;AccountName=stjcibemicroserviceqa;AccountKey=p75dlLjgOdufXU/ZSqEnB6du+b2dMd8G5D2T8JKE64LljE0biw041ZbRDb0b8Ekqtg8aNDGJnzJ2y72MhjmUIA==;
+      blob:
+       download:
+         baseurl: https://stjcibemicroserviceqa.blob.core.windows.net/controlsplmblob/
+
+---
+spring:
+  profiles: azure-development-cloud
+  application:
+    name: plm-uiprocesser-service
+eureka:
+  client:
+    register-with-eureka: true
+    eureka-service-url-poll-interval-seconds: 5000
+    enabled: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: false
+    hostname: plm-uiprocesser-service
+
+logging:
+  level:
+    org.springframework.security: INFO
+    org.springframework.web: INFO
+    com.jci.partbom: DEBUG
+
+azure:
+    storage:
+      connectionstring: DefaultEndpointsProtocol=https;AccountName=stjcibemicroservicedev;AccountKey=f1aaZK0ecnptn302H6JqEAjKx/gRgHP8kO9JkWGaGRMitvKR8V+qm438FDhVDkg3m00Okb3pvVYpOfvdXkgoIQ==;
+      blob:
+       download:
+         baseurl: https://stjcibemicroservicedev.blob.core.windows.net/controlsplmblob/
+      

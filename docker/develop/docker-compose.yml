@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  plm-uiprocesser-service:
+    image: jcibe_controls_plm/plm-uiprocesser-service:develop
+    mem_limit: 1024M
+    environment:
+     SPRING_PROFILES_ACTIVE: docker-development-cloud
+     JAVA_OPTS: -Xms256m -Xmx512m
+    build:
+      context: ../../
+      dockerfile: plm-uiprocesser-service/src/main/dockerBuildRelease/Dockerfile   
+    ports:
+    - "9567:9567"
+    restart: always
+    networks:
+    - cloud
+
+networks:
+  cloud:
+   driver: bridge
