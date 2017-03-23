@@ -29,10 +29,10 @@ logging:
   
 azure:
     storage:
-      connectionstring: DefaultEndpointsProtocol=https;AccountName=stjcibemicroservicedev;AccountKey=f1aaZK0ecnptn302H6JqEAjKx/gRgHP8kO9JkWGaGRMitvKR8V+qm438FDhVDkg3m00Okb3pvVYpOfvdXkgoIQ==;
+      connectionstring: NA
       blob:
        download:
-         baseurl: https://storagemicroservicedev.blob.core.windows.net/controlsplmblob/
+         baseurl: NA
 ---
 spring:
   profiles: docker-production-cloud
@@ -47,10 +47,10 @@ logging:
 
 azure:
     storage:
-      connectionstring: DefaultEndpointsProtocol=https;AccountName=stjcibemicroserviceprod;AccountKey=fMrqLK4+O3Z+GBSKNQJ3kgwdrBN70GsXYtW07GGey0qwNf+oplGrylHH4qAEJ2acGViOTzdQCduCRO401jSjdQ==;
+      connectionstring: NA
       blob:
        download:
-         baseurl: https://stjcibemicroserviceprod.blob.core.windows.net/controlsplmblob/
+         baseurl: NA
 ---
 spring:
   profiles: docker-qa-cloud
@@ -65,10 +65,10 @@ logging:
 
 azure:
     storage:
-      connectionstring: DefaultEndpointsProtocol=https;AccountName=stjcibemicroserviceqa;AccountKey=p75dlLjgOdufXU/ZSqEnB6du+b2dMd8G5D2T8JKE64LljE0biw041ZbRDb0b8Ekqtg8aNDGJnzJ2y72MhjmUIA==;
+      connectionstring: NA
       blob:
        download:
-         baseurl: https://stjcibemicroserviceqa.blob.core.windows.net/controlsplmblob/
+         baseurl: NA
 
 ---
 spring:
@@ -95,8 +95,8 @@ logging:
 
 azure:
     storage:
-      connectionstring: DefaultEndpointsProtocol=https;AccountName=stjcibemicroservicedev;AccountKey=f1aaZK0ecnptn302H6JqEAjKx/gRgHP8kO9JkWGaGRMitvKR8V+qm438FDhVDkg3m00Okb3pvVYpOfvdXkgoIQ==;
+      connectionstring: NA
       blob:
        download:
-         baseurl: https://stjcibemicroservicedev.blob.core.windows.net/controlsplmblob/
+         baseurl: NA
       
